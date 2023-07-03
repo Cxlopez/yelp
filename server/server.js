@@ -17,7 +17,7 @@ app.get("/api/v1/restaurants", async (req, res) => {
       results: results.rows.length,
       data: {
         restaurants: results.rows,
-  
+
       },
     });
   } catch (err) {
@@ -38,11 +38,11 @@ app.get("/api/v1/restaurants/:id", async (req, res) => {
         restaurant: results.rows[0],
       }
     })
-  } catch(err) {
+  } catch (err) {
     console.log(err);
   }
 
-  
+
 })
 
 //Create a restaurant
@@ -50,7 +50,7 @@ app.post("/api/v1/restaurants", async (req, res) => {
   console.log(req.body);
 
   try {
-    const results = await db.query("INSERT INTO restaurants (name, location, price_range) VALUES ($1, $2, $3) returning *", [req.body.name, req.body.location, req.body.price_range] );
+    const results = await db.query("INSERT INTO restaurants (name, location, price_range) VALUES ($1, $2, $3) returning *", [req.body.name, req.body.location, req.body.price_range]);
 
     res.status(201).json({
       status: "success",
@@ -69,7 +69,7 @@ app.put("/api/v1/restaurants/:id", async (req, res) => {
   console.log(req.params.id);
 
   try {
-    const results = await db.query("UPDATE restaurants SET name = $1, location = $2, price_range = $3 WHERE id = $4 returning *", [req.body.name, req.body.location, req.body.price_range, req.params.id] );
+    const results = await db.query("UPDATE restaurants SET name = $1, location = $2, price_range = $3 WHERE id = $4 returning *", [req.body.name, req.body.location, req.body.price_range, req.params.id]);
 
 
     res.status(200).json({
@@ -85,7 +85,7 @@ app.put("/api/v1/restaurants/:id", async (req, res) => {
 
   console.log(req.params.id);
   console.log(req.body);
-  
+
 })
 
 // Delete restaurant
