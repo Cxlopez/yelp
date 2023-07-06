@@ -6,7 +6,7 @@ import RestaurantDetail from "./routes/RestaurantDetail";
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/restaurants/:id/update" element={<UpdatePage />} />
