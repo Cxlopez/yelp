@@ -1,6 +1,18 @@
-import React from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, {useEffect} from 'react'
+import RestaurantFinder from '../apis/RestaurantFinder'
 
 function RestaurantList() {
+
+  useEffect(async () => {
+    try {
+     const response = await RestaurantFinder.get("/")
+     console.log(response)
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
+
   return (
     <div className='list-group'>
       <table className='table table-hover table-dark'>
