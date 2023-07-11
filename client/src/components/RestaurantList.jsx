@@ -4,13 +4,18 @@ import RestaurantFinder from '../apis/RestaurantFinder'
 
 function RestaurantList() {
 
-  useEffect(async () => {
-    try {
-     const response = await RestaurantFinder.get("/")
-     console.log(response)
-    } catch (err) {
-      console.log(err);
-    }
+  useEffect(() => {
+    const fetchData = async () => {
+      
+      try {
+       const response = await RestaurantFinder.get("/")
+       console.log(response)
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (

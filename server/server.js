@@ -3,6 +3,7 @@ const express = require("express");
 const db = require("./db");
 const morgan = require("morgan")
 const app = express();
+const cors= require("cors");
 
 //middlewares 
 app.use(cors());
