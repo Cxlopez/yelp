@@ -1,9 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import RestaurantFinder from "../apis/RestaurantFinder";
+
 
 function AddRestaurant() {
   const [name,setName] = useState("");
   const [location,setLocation] = useState("");
   const [priceRange,setPriceRange] = useState("Price Range");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await RestaurantFinder.post("/", {
+        name: name,
+        location: location,
+        price_range: priceRange
+      });
+      console.log(response);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   return (
     <div className='mb-4'>
@@ -38,7 +55,7 @@ function AddRestaurant() {
               <option value="5">$$$$$</option>
             </select>
           </div>
-          <button className='btn btn-primary'>Add</button>
+          <button onClick={handleSubmit} type='submit' className='btn btn-primary'>Add</button>
         </div>
       </form>
     </div>
