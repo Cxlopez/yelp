@@ -1,6 +1,6 @@
 import React from 'react'
 
-function starRating({rating}) {
+function StarRating({rating}) {
   const stars = [];
   for (let i = 1; i <= 5; i++) {
     if (i <= rating) {
@@ -16,4 +16,4 @@ function starRating({rating}) {
   )
 }
 
-export default starRating
+export default StarRating
