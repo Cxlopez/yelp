@@ -24,7 +24,7 @@ function RestaurantDetail() {
     fetchData();
   }, [])
   return (
-    <div>{selectedRestaurant && <StarRating rating={3} />}</div>
+    <div>{selectedRestaurant && <StarRating rating={3.5} />}</div>
   )
 }
 
