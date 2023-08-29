@@ -4,7 +4,7 @@ import StarRating from './StarRating'
 function Reviews() {
   return (
     <div className='row row-cols-3 mb-2'>
-      <div className="card text-white-bg-primary mb-3 mr-4" style={{maxWidth: "30%"}}>
+      <div className="card text-white bg-primary mb-3 mr-4" style={{maxWidth: "30%"}}>
         <div className="card-header d-flex justifu-content-between">
           <span>Estuardo</span>
           <span>
