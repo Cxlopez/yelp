@@ -29,7 +29,7 @@ function RestaurantDetail() {
     <div>{selectedRestaurant && (
       <>
       <div className="mt-3">
-        <Reviews reviews={selectedRestaurant}/>
+        <Reviews reviews={selectedRestaurant.reviews}/>
       </div>
       <AddReview />
       </>
