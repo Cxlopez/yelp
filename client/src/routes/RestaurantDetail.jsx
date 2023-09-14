@@ -28,6 +28,7 @@ function RestaurantDetail() {
   return (
     <div>{selectedRestaurant && (
       <>
+      <h1>{selectedRestaurant.restaurant.name}</h1>
       <div className="mt-3">
         <Reviews reviews={selectedRestaurant.reviews}/>
       </div>
