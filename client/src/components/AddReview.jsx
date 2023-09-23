@@ -19,7 +19,8 @@ function AddReview() {
       review: reviewText,
       rating,
     });
-    useNavigate.push(location.pathname);
+    navigate.push("/");
+    navigate.push(location.pathname);
 
   } catch (err) {
     console.log(err)
