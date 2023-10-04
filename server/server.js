@@ -20,9 +20,9 @@ app.get("/api/v1/restaurants", async (req, res) => {
 
     res.status(200).json({
       status: "sucess",
-      results: results.rows.length,
+      results: restaurantRatingData.rows.length,
       data: {
-        restaurants: results.rows,
+        restaurants: restaurantRatingData.rows,
 
       },
     });
