@@ -45,10 +45,15 @@ function RestaurantList(props) {
   };
 
   const renderRating = (restaurant) => {
+
+    if (!restaurant.count) {
+      return <span className="text-warning">0 reviews</span>
+    }
+
     return (
       <>
         <StarRating rating={restaurant.id} />
-        <span className="text-warning ml-1">{restaurant.count}</span>
+        <span className="text-warning ml-1">({restaurant.count})</span>
       </>
     );
   };
@@ -77,7 +82,7 @@ function RestaurantList(props) {
                   <td>{restaurant.name}</td>
                   <td>{restaurant.location}</td>
                   <td>{"$".repeat(restaurant.price_range)}</td>
-                  <td>reviews</td>
+                  <td>{renderRating(restaurant)}</td>
                   <td>
                     <button
                       onClick={(e) => handleUpdate(e, restaurant.id)}
