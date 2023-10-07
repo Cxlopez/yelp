@@ -11,7 +11,7 @@ function AddReview() {
   const [rating, setRating] = useState("Rating");
 
   const handleSubmitReview = async (e) => {
-    e.preventDefauylt();
+  e.preventDefault();
 
   try {
     const response = await RestaurantFinder.post(`/${id}/addReview`, {
